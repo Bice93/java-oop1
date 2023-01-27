@@ -10,16 +10,13 @@ public class Prodotto {
 	String description;
 	int price;
 	int iva = 10;
-	String code;
 	
 	//Costruttore
 	public Prodotto(String name, int price) {
 		Random r = new Random();
 		this.name = name;
 		this.price = price;
-		numberCode = r.nextInt(99999);
-		code = String.format("%08d", numberCode);
-		
+		numberCode = r.nextInt(99999);	
 	};
 	
 	//Prendo il prezzo
@@ -34,6 +31,8 @@ public class Prodotto {
 	
 	//Prendo il nome esteso
 	String getExtendedName() {
+		String code;
+		code = String.format("%08d", numberCode);
 		return code + "-" + name;
 	}
 	
